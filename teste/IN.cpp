@@ -16,83 +16,115 @@ void display()
 
     glClear(GL_COLOR_BUFFER_BIT);
 
-    /* Desenha um poligono colorido (retangulo) */
+    /*QUEMNÃOTEMTETODEVIDROQUEATIREOPRIMEIROBUG */
 
     glBegin(GL_POLYGON);
 
     glColor3f(1, 0, 0);
 
-    glVertex3f(0.25, 0.25, 0);
+    glVertex3f(-0.5, 0, 0);
 
-    glColor3f(0, 1, 0);
+    glVertex3f(0.5, 0, 0);
 
-    glVertex3f(0.75, 0.25, 0);
+    glVertex3f(0, 0.45, 0);
+
+    glEnd();
+
+    /* PAREDÃO DA MASSA */
+
+    glBegin(GL_POLYGON);
 
     glColor3f(0, 0, 1);
 
-    glVertex3f(0.75, 0.75, 0);
+    glVertex3f(-0.5, 0, 0);
 
-    glVertex3f(0.25, 0.75, 0);
+    glVertex3f(-0.5, -0.6, 0);
 
-    glEnd();
+    glVertex3f(0.5, -0.6, 0);
 
-    /*glBegin(GL_LINE_STRIP);
-
-    glColor3f(1,0,0);
-
-    glVertex2i(50,0);
-
-    glVertex2i(50,80);
-
-    glVertex2i(100,80);
-
-    glVertex2i(100,0);
-
-
+    glVertex3f(0.5, 0, 0);
 
     glEnd();
 
+    /* PORTINHA PA NÁRNIA */
 
+    glBegin(GL_POLYGON);
 
-     /*glBegin(GL_POINTS);
+    glColor3f(1, 1, 1);
 
-    glColor3f(1,0,0);
+    glVertex3f(-0.12, -0.11, 0);
 
-    glVertex2i(80,50);
+    glVertex3f(-0.12, -0.58, 0);
 
+    glVertex3f(0.12, -0.58, 0);
 
-
-    glEnd();
-
-
-
-    */
-
-    /*glBegin(GL_LINE_LOOP);
-
-    glColor3f(1,0,0);
-
-    glVertex2i(50,0);
-
-    glVertex2i(50,80);
-
-    glVertex2i(100,80);
-
-    glVertex2i(100,0);
-
-
+    glVertex3f(0.12, -0.11, 0);
 
     glEnd();
 
-    */
+    /* JANELIN */
 
-    glColor3f(0, 1, 1); //azul claro
+    glBegin(GL_POLYGON);
 
-    glutWireTeapot(0.8); //desenha centrado na origem
+    glColor3f(1, 1, 1);
 
-    //glutSolidSphere(0.5, 30, 10); //GLdouble radius, GLint slices (latitude), GLint stacks (longitude);
+    glVertex3f(0.2, -0.20, 0);
 
-    //glutWireTeapot(0.5);
+    glVertex3f(0.2, -0.35, 0);
+
+    glVertex3f(0.4, -0.35, 0);
+
+    glVertex3f(0.4, -0.20, 0);
+
+    glEnd();
+
+    //MADEIRINHA DA JANELIN
+
+    glLineWidth(2.5);
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_LINES);
+    glVertex3f(0.3, -0.20, 0);
+    glVertex3f(0.3, -0.35, 0);
+    glEnd();
+
+    //MADEIRINHA DA JANELIN pt 2
+
+    glLineWidth(2.5);
+    glColor3f(0.0, 0.0, 0.0);
+    glBegin(GL_LINES);
+    glVertex3f(0.2, -0.275, 0);
+    glVertex3f(0.4, -0.275, 0);
+    glEnd();
+
+    // glBegin(GL_POINTS);
+
+    // glColor3f(1, 0, 0);
+
+    // glVertex2i(80, 50);
+
+    // glEnd();
+
+    // glBegin(GL_LINE_LOOP);
+
+    // glColor3f(1, 0, 0);
+
+    // glVertex2i(50, 0);
+
+    // glVertex2i(50, 80);
+
+    // glVertex2i(100, 80);
+
+    // glVertex2i(100, 0);
+
+    // glEnd();
+
+    // glColor3f(0, 1, 1); //azul claro
+
+    // glutWireTeapot(0.8); //desenha centrado na origem
+
+    // glutSolidSphere(0.5, 30, 10); //GLdouble radius, GLint slices (latitude), GLint stacks (longitude);
+
+    // glutWireTeapot(0.5);
 
     /* Troca buffers (double-buffering) */
 
@@ -182,7 +214,7 @@ void init()
 
     /* Define a cor de fundo (preto) */
 
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(1, 1, 1, 0.0);
 
     //deixa o fundo vermelho
 
